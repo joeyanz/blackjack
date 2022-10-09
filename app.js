@@ -111,7 +111,7 @@ function checkPlayersHand() {
     }
     if (playerScore > 21) {
         revealHiddenCard();
-        endGame("Dealer Won");
+        endGame("Dealer Wins");
     }
     if (playerScore === 21) {
         stand();
@@ -131,9 +131,9 @@ function checkDealersHand() {
         }
     }
     if (dealerScore > 21 || playerScore > dealerScore) {
-        endGame("Player Won");
+        endGame("Player wins");
     } else if (dealerScore > playerScore) {
-        endGame("Dealer Won");
+        endGame("Dealer wins");
     } else if (dealerScore === playerScore) {
         endGame("Tie");
     }
@@ -143,7 +143,7 @@ function stand() {
     revealHiddenCard();
     checkDealerBj();
     if (dealerBj) {
-        endGame("Dealer Won");
+        endGame("Dealer wins");
     } else {
         checkDealersHand();
     }
@@ -187,7 +187,7 @@ function start() {
         if (dealerBj) {
             endGame("Tie");
         } else {
-            endGame("Player Won");
+            endGame("Player wins");
         }
     }
 }
